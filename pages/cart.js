@@ -5,8 +5,11 @@ import { XCircleIcon } from '@heroicons/react/outline';
 import Layout from '../components/Layout';
 import { Store } from '../utils/Store';
 import { useRouter } from 'next/router';
+import dynamic from 'next/dynamic';
 
-export default function CartScreen() {
+// this component is render as client side component
+// for avoid hydrate server vs cleint error
+function CartScreen() {
   const router = useRouter();
   const { state, dispatch } = useContext(Store);
   const {
@@ -103,3 +106,7 @@ export default function CartScreen() {
     </Layout>
   );
 }
+
+// dynamic page ssr: false render only on client side
+// we dont want index it in SEO
+export default dynamic(() => Promise.resolve(CartScreen), { ssr: false });
