@@ -53,10 +53,10 @@
   dependencies:
     client-only "^0.0.1"
 
-"@heroicons/react@^2.0.18":
-  version "2.0.18"
-  resolved "https://registry.yarnpkg.com/@heroicons/react/-/react-2.0.18.tgz#f80301907c243df03c7e9fd76c0286e95361f7c1"
-  integrity sha512-7TyMjRrZZMBPa+/5Y8lN0iyvUU/01PeMGX2+RE7cQWpEUIcb4QotzUObFkJDejj/HUH4qjP/eQ0gzzKs2f+6Yw==
+"@heroicons/react@v1":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@heroicons/react/-/react-1.0.6.tgz#35dd26987228b39ef2316db3b1245c42eb19e324"
+  integrity sha512-JJCXydOFWMDpCP4q13iEplA503MQO3xLoZiKum+955ZCtHINWnx26CUxVxxFQu/uLb4LW3ge15ZpzIkXKkJ8oQ==
 
 "@humanwhocodes/config-array@^0.11.8":
   version "0.11.8"
@@ -3298,6 +3298,11 @@ yaml@^2.1.1:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/yaml/-/yaml-2.2.2.tgz#ec551ef37326e6d42872dad1970300f8eb83a073"
   integrity sha512-CBKFWExMn46Foo4cldiChEzn7S7SRV+wqiluAb6xmueD/fGyRHIhX8m14vVGgeFWjN540nKCNVj6P21eQjgTuA==
+
+yarn@^2.0.18:
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/yarn/-/yarn-2.4.3.tgz#f6f3ca06dd47eb47db34a80bd461fc936db31f04"
+  integrity sha512-HQ8VJL8v1Tlq+VVzcohmYw7dHtZ6VUB4/b2oHRGQc6Xv00AQjVk4C6cyqu4iHRI4esfgIi8S9doOm1d3Z3MlPA==
 
 yocto-queue@^0.1.0:
   version "0.1.0"
