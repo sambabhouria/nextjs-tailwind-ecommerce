@@ -85,6 +85,9 @@ function OrderScreen() {
     isDelivered,
     deliveredAt,
   } = order;
+  console.log('🚀 ~ file: [id].js:40 ~ OrderScreen ~ order:', order);
+
+  console.log('🚀 ~ file: [id].js:88 ~ OrderScreen ~ orderItems:', orderItems);
 
   function createOrder(data, actions) {
     return actions.order
