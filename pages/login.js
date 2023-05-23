@@ -9,10 +9,8 @@ import { useRouter } from 'next/router';
 
 export default function LoginScreen() {
   const { data: session } = useSession();
-
   const router = useRouter();
   const { redirect } = router.query;
-  console.log('🚀 ~ file: login.js:15 ~ LoginScreen ~ redirect:', redirect);
 
   useEffect(() => {
     if (session?.user) {
