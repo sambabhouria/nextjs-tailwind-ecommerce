@@ -6,7 +6,7 @@ import db from '../../../utils/db';
 import User from '@/models/User';
 
 const handler = async (req, res) => {
-  console.log('🚀 ~ file: index.js:6 ~ handler ~ req:', req.body);
+  // console.log('🚀 ~ file: index.js:6 ~ handler ~ req:', req.body);
   //https://next-auth.js.org/configuration/nextjs#unstable_getserversession
   // const session = await getSession({ req });
   const session = await getServerSession(req, res, authOptions);
