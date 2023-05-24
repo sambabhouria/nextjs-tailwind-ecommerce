@@ -10,6 +10,7 @@ const handler = async (req, res) => {
   //https://next-auth.js.org/configuration/nextjs#unstable_getserversession
   // const session = await getSession({ req });
   const session = await getServerSession(req, res, authOptions);
+  console.log('🚀 ~ file: index.js:13 ~ handler ~ req:', req.body);
   if (!session) {
     return res.status(401).send('signin required');
   }
@@ -20,7 +21,7 @@ const handler = async (req, res) => {
   const userFromDataBase = await User.findOne({
     email: user.email,
   });
-
+  // console.log('🚀 ~ file: index.js:25 ~ handler ~ req.body:', req.body);
   if (userFromDataBase._id) {
     const newOrder = new Order({
       ...req.body,
