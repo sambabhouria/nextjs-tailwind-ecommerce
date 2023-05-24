@@ -125,7 +125,9 @@ export default function AdminProductEditScreen() {
         description,
       });
       dispatch({ type: 'UPDATE_SUCCESS' });
+
       toast.success('Product updated successfully');
+      // la redirection peut empecher de voir le toast
       router.push('/admin/products');
     } catch (err) {
       dispatch({ type: 'UPDATE_FAIL', payload: getError(err) });
