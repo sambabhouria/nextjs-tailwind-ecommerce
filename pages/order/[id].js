@@ -48,7 +48,6 @@ function OrderScreen() {
         dispatch({ type: 'FETCH_REQUEST' });
         const { data } = await axios.get(`/api/orders/${orderId}`);
         dispatch({ type: 'FETCH_SUCCESS', payload: data });
-        console.log('🚀 ~ file: [id].js:51 ~ fetchOrder ~ data:', data);
       } catch (err) {
         dispatch({ type: 'FETCH_FAIL', payload: getError(err) });
       }
@@ -86,8 +85,6 @@ function OrderScreen() {
     isDelivered,
     deliveredAt,
   } = order;
-
-  console.log('🚀 ~ file: [id].js:88 ~ OrderScreen ~ orderItems:', orderItems);
 
   function createOrder(data, actions) {
     return actions.order
