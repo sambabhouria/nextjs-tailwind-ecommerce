@@ -18,3 +18,12 @@
 6. MongoDB and Mongoose to save and retrieve data like products, orders and users
 7. PayPal developer api to make online payment
 8. Deploy web applications on servers like Vercel and Netlify
+
+💻 Screen Shoo t💻
+
+![alt text](1.png)
+![alt text](2.png)
+![alt text](3.png)
+![alt text](4.png)
+![alt text](5.png)
+![alt text](7.png)
