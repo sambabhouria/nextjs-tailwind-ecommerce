@@ -21,7 +21,6 @@ const handler = async (req, res) => {
   const userFromDataBase = await User.findOne({
     email: user.email,
   });
-  // console.log('🚀 ~ file: index.js:25 ~ handler ~ req.body:', req.body);
   if (userFromDataBase._id) {
     const newOrder = new Order({
       ...req.body,
