@@ -87,17 +87,27 @@ export default function AdminOrderScreen() {
                         {order.user ? order.user.name : 'DELETED USER'}
                       </td>
                       <td className="p-5">
-                        {order.createdAt.substring(0, 10)}
+                        {order.createdAt
+                          ? order.createdAt.substring(0, 10)
+                          : new Date().toJSON().slice(0, 10)}
                       </td>
                       <td className="p-5">${order.totalPrice}</td>
                       <td className="p-5">
                         {order.isPaid
-                          ? `${order.paidAt.substring(0, 10)}`
+                          ? `${
+                              order.paidAt
+                                ? order.paidAt.substring(0, 10)
+                                : new Date().toJSON().slice(0, 10)
+                            }`
                           : 'not paid'}
                       </td>
                       <td className="p-5">
                         {order.isDelivered
-                          ? `${order.deliveredAt.substring(0, 10)}`
+                          ? `${
+                              order.deliveredAt
+                                ? order.deliveredAt.substring(0, 10)
+                                : new Date().toJSON().slice(0, 10)
+                            }`
                           : 'not delivered'}
                       </td>
                       <td className="p-5">
