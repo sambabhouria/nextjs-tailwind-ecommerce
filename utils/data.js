@@ -27,7 +27,7 @@ const data = {
       numReviews: 8,
       countInStock: 20,
       description: 'A popular Sweat West',
-      isFeatured: true,
+      isFeatured: false,
       banner: '/images/VesteSweat.jpg',
     },
     {
@@ -41,7 +41,7 @@ const data = {
       numReviews: 8,
       countInStock: 20,
       description: 'A popular Sweat',
-      isFeatured: true,
+      isFeatured: false,
       banner: '/images/RedbrigeSweat.jpg',
     },
     // {
@@ -83,7 +83,7 @@ const data = {
       numReviews: 8,
       countInStock: 20,
       description: 'A popular Sweat West',
-      isFeatured: true,
+      isFeatured: false,
       banner: '/images/VesteSweat.jpg',
     },
     // {
