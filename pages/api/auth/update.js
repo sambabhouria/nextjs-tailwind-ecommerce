@@ -1,11 +1,21 @@
 // import { getSession } from 'next-auth/react';
 import { authOptions } from 'pages/api/auth/[...nextauth]';
+// import { getToken } from 'next-auth/jwt';
 import { getServerSession } from 'next-auth/next';
 import bcryptjs from 'bcryptjs';
 import User from '../../../models/User';
 import db from '../../../utils/db';
 
 async function handler(req, res) {
+  /**
+   * nextjs 13
+   *  const user = await getToken({ req });
+  if (!user) {
+    return res.status(401).send({ message: 'signin required' });
+  }
+    const toUpdateUser = await User.findById(user._id);
+   * 
+   */
   if (req.method !== 'PUT') {
     return res.status(400).send({ message: `${req.method} not supported` });
   }

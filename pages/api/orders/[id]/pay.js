@@ -1,8 +1,16 @@
 import { getSession } from 'next-auth/react';
 import Order from '../../../../models/Order';
 import db from '../../../../utils/db';
+// import { getToken } from 'next-auth/jwt';
 
 const handler = async (req, res) => {
+  /**
+   * next js 13 
+   * const user = await getToken({ req });
+  if (!user) {
+    return res.status(401).send('Error: signin required');
+  }
+   */
   const session = await getSession({ req });
   if (!session) {
     return res.status(401).send('Error: signin required');

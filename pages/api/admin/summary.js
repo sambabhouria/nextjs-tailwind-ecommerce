@@ -1,10 +1,18 @@
 import { getSession } from 'next-auth/react';
+// import { getToken } from 'next-auth/jwt';
 import Order from '../../../models/Order';
 import Product from '../../../models/Product';
 import User from '../../../models/User';
 import db from '../../../utils/db';
 
 const handler = async (req, res) => {
+  /**next js 13
+   * 
+   *  const user = await getToken({ req });
+  if (!user || !user.isAdmin) {
+    return res.status(401).send('admin signin required');
+  }
+   */
   const session = await getSession({ req });
   console.log(session);
   if (!session || (session && !session.user.isAdmin)) {

@@ -1,4 +1,5 @@
 import { getSession } from 'next-auth/react';
+// import { getToken } from 'next-auth/jwt';
 import { authOptions } from 'pages/api/auth/[...nextauth]';
 import { getServerSession } from 'next-auth/next';
 import Product from '../../../../../models/Product';
@@ -6,6 +7,13 @@ import db from '../../../../../utils/db';
 import User from '@/models/User';
 
 const handler = async (req, res) => {
+  /**
+   * next js 13 
+   *  const user = await getToken({ req });
+  if (!user || (user && !user.isAdmin)) {
+    return res.status(401).send('signin required');
+  }
+   */
   const session =
     req.method === 'GET' || req.method === 'DELETE'
       ? await getSession({ req })
