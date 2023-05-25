@@ -82,8 +82,8 @@ function AdminDashboardScreen() {
         <div>
           <ul>
             <li>
-              <Link href="/admin/dashboard" legacyBehavior>
-                <a className="font-bold">Dashboard</a>
+              <Link href="/admin/dashboard" className="font-bold">
+                Dashboard
               </Link>
             </li>
             <li>

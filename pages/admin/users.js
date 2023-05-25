@@ -82,8 +82,8 @@ function AdminUsersScreen() {
               <Link href="/admin/products">Products</Link>
             </li>
             <li>
-              <Link href="/admin/users" legacyBehavior>
-                <a className="font-bold">Users</a>
+              <Link href="/admin/users" className="font-bold">
+                Users
               </Link>
             </li>
           </ul>
@@ -118,11 +118,10 @@ function AdminUsersScreen() {
                         <Link
                           href={`/admin/user/${user._id}`}
                           passHref
-                          legacyBehavior
+                          type="button"
+                          className="default-button"
                         >
-                          <a type="button" className="default-button">
-                            Edit
-                          </a>
+                          Edit
                         </Link>
                         &nbsp;
                         <button

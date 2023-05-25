@@ -10,6 +10,7 @@ import { Store } from '../utils/Store';
 import DropdownLink from './DropdownLink';
 import { useRouter } from 'next/router';
 import { SearchIcon } from '@heroicons/react/outline';
+// import SearchIcon from '@heroicons/react/24/outline/MagnifyingGlassIcon';
 
 export default function Layout({ title, children }) {
   const { status, data: session } = useSession();
@@ -40,22 +41,22 @@ export default function Layout({ title, children }) {
   return (
     <>
       <Head>
-        <title>{title ? title + ' - Amazone' : 'Amazone'}</title>
+        <title>{title ? title + ' - Amazona' : 'Amazona'}</title>
         <meta name="description" content="Ecommerce Website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <ToastContainer position="bottom-center" limit={1} />
 
-      <div className="flex min-h-screen flex-col justify-between">
+      <div className="flex min-h-screen flex-col justify-between ">
         <header>
           <nav className="flex h-12 items-center px-4 justify-between shadow-md">
-            <Link href="/" legacyBehavior>
-              <a className="text-lg font-bold">amazone</a>
+            <Link href="/" className="text-lg font-bold">
+              amazona
             </Link>
             <form
               onSubmit={submitHandler}
-              className="mx-auto  hidden w-full justify-center md:flex"
+              className="mx-auto  hidden  justify-center md:flex"
             >
               <input
                 onChange={(e) => setQuery(e.target.value)}
@@ -71,22 +72,20 @@ export default function Layout({ title, children }) {
                 <SearchIcon className="h-5 w-5"></SearchIcon>
               </button>
             </form>
-            <div className="flex items-baseline justify-center">
-              <Link href="/cart" legacyBehavior>
-                <a className="p-2">
-                  Cart
-                  {cartItemsCount > 0 && (
-                    <span className="ml-1 rounded-full bg-red-600 px-2 py-1 text-xs font-bold text-white">
-                      {cartItemsCount}
-                    </span>
-                  )}
-                </a>
+            <div className="flex items-center z-10">
+              <Link href="/cart" className="p-2">
+                Cart
+                {cartItemsCount > 0 && (
+                  <span className="ml-1 rounded-full bg-red-600 px-2 py-1 text-xs font-bold text-white">
+                    {cartItemsCount}
+                  </span>
+                )}
               </Link>
 
               {status === 'loading' ? (
                 'Loading'
               ) : session?.user ? (
-                <Menu as="div" className="relative inline-block z-10">
+                <Menu as="div" className="relative inline-block">
                   <Menu.Button className="text-blue-600">
                     {session.user.name}
                   </Menu.Button>
@@ -126,8 +125,8 @@ export default function Layout({ title, children }) {
                   </Menu.Items>
                 </Menu>
               ) : (
-                <Link href="/login" legacyBehavior>
-                  <a className="p-2">Login</a>
+                <Link href="/login" className="p-2">
+                  Login
                 </Link>
               )}
             </div>
