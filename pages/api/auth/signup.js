@@ -1,12 +1,12 @@
-import bcryptjs from 'bcryptjs';
-import User from '../../../models/User';
-import db from '../../../utils/db';
+import bcryptjs from 'bcryptjs'
+import User from '../../../models/User'
+import db from '../../../utils/db'
 
 async function handler(req, res) {
   if (req.method !== 'POST') {
-    return;
+    return
   }
-  const { name, email, password } = req.body;
+  const { name, email, password } = req.body
   if (
     !name ||
     !email ||
@@ -16,17 +16,17 @@ async function handler(req, res) {
   ) {
     res.status(422).json({
       message: 'Validation error',
-    });
-    return;
+    })
+    return
   }
 
-  await db.connect();
+  await db.connect()
 
-  const existingUser = await User.findOne({ email: email });
+  const existingUser = await User.findOne({ email: email })
   if (existingUser) {
-    res.status(422).json({ message: 'User exists already!' });
-    await db.disconnect();
-    return;
+    res.status(422).json({ message: 'User exists already!' })
+    await db.disconnect()
+    return
   }
 
   const newUser = new User({
@@ -34,17 +34,17 @@ async function handler(req, res) {
     email,
     password: bcryptjs.hashSync(password),
     isAdmin: false,
-  });
+  })
 
-  const user = await newUser.save();
-  await db.disconnect();
+  const user = await newUser.save()
+  await db.disconnect()
   res.status(201).send({
     message: 'Created user!',
     _id: user._id,
     name: user.name,
     email: user.email,
     isAdmin: user.isAdmin,
-  });
+  })
 }
 
-export default handler;
+export default handler

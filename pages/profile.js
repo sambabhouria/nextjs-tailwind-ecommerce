@@ -1,27 +1,25 @@
-import React, { useEffect } from 'react';
-import { signIn, useSession } from 'next-auth/react';
-import { useForm } from 'react-hook-form';
-import { toast } from 'react-toastify';
-import { getError } from '../utils/error';
-import axios from 'axios';
-import Layout from '../components/Layout';
+import React, { useEffect } from 'react'
+import { signIn, useSession } from 'next-auth/react'
+import { useForm } from 'react-hook-form'
+import { toast } from 'react-toastify'
+import { getError } from '../utils/error'
+import axios from 'axios'
+import Layout from '../components/Layout'
 
 export default function ProfileScreen() {
-  const { data: session } = useSession();
-  console.log('🚀 ~ file: profile.js:11 ~ ProfileScreen ~ session:', session);
-
+  const { data: session } = useSession()
   const {
     handleSubmit,
     register,
     getValues,
     setValue,
     formState: { errors },
-  } = useForm();
+  } = useForm()
 
   useEffect(() => {
-    setValue('name', session.user.name);
-    setValue('email', session.user.email);
-  }, [session.user, setValue]);
+    setValue('name', session.user.name)
+    setValue('email', session.user.email)
+  }, [session.user, setValue])
 
   const submitHandler = async ({ name, email, password }) => {
     try {
@@ -29,7 +27,7 @@ export default function ProfileScreen() {
         name,
         email,
         password,
-      });
+      })
 
       // we change email and password
       // we need to sign again
@@ -37,16 +35,16 @@ export default function ProfileScreen() {
         redirect: false,
         email,
         password,
-      });
+      })
 
-      toast.success('Profile updated successfully');
+      toast.success('Profile updated successfully')
       if (result.error) {
-        toast.error(result.error);
+        toast.error(result.error)
       }
     } catch (err) {
-      toast.error(getError(err));
+      toast.error(getError(err))
     }
-  };
+  }
 
   return (
     <Layout title="Profile">
@@ -137,7 +135,7 @@ export default function ProfileScreen() {
         </div>
       </form>
     </Layout>
-  );
+  )
 }
 
-ProfileScreen.auth = true;
+ProfileScreen.auth = true
